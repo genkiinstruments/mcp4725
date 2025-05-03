@@ -53,6 +53,10 @@ use embedded_hal::blocking::i2c::{Read, Write};
 use encode::{encode_address, encode_command, encode_fast_command};
 pub use status::DacStatus;
 
+#[path = "async.rs"]
+mod _async;
+pub use _async::*;
+
 /// MCP4725 DAC driver. Wraps an I2C port to send commands to an MCP4725
 #[derive(Debug)]
 pub struct MCP4725<I2C>
